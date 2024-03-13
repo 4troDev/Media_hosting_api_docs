@@ -1,11 +1,108 @@
-# Introduction
- 
-Welcome to Nextra! This is a basic docs template. You can use it as a starting point for your own project :)
+# Media Hosting API Documentation
 
-## What is Nextra?
+## Introduction
 
-A **simple**, **powerful** and **flexible** site generation framework with everything you love from Next.js.
+Welcome to the documentation for the Media Hosting API, an open-source solution designed to streamline media file hosting and management. This API provides a straightforward and efficient way to handle various types of media files, allowing you to seamlessly integrate media file management into your Node.js applications.
 
-## Documentation
+---
 
-The documentation is available at [https://nextra.site](https://nextra.site).
+## Endpoints
+
+The Media Hosting API exposes the following endpoints:
+
+- **Check Media File Existence**:
+  - Endpoint: `GET /api/v1/check/:id`
+  - Description: Check if a media file exists by providing its ID.
+
+- **Delete Media File**:
+  - Endpoint: `DELETE /api/v1/delete/:id`
+  - Description: Remove a media file by providing its ID.
+
+- **Stream Media (Videos or MP3)**:
+  - Endpoint: `GET /api/v1/play/:id`
+  - Description: Stream videos or MP3 files by providing the media file ID.
+
+- **Upload Media File**:
+  - Endpoint: `POST /api/v1/upload`
+  - Description: Upload media files, including images, video files, and audio files.
+
+- **View Media Source Link**:
+  - Endpoint: `GET /api/v1/view/:id`
+  - Description: Retrieve the source link of the media file by providing its ID.
+
+---
+
+## Usage
+
+To interact with the Media Hosting API, you can make HTTP requests to the specified endpoints. Below are examples of key functionalities:
+
+### Check Media File Existence
+
+```javascript
+const result = mediaHostingApi.checkMediaFileExistence('123456');
+console.log(result);
+```
+
+### Delete Media File
+
+```javascript
+const result = mediaHostingApi.deleteMediaFile('123456');
+console.log(result);
+```
+
+### Stream Media (Videos or MP3)
+
+```javascript
+const result = mediaHostingApi.streamMedia('123456');
+console.log(result);
+```
+
+### Upload Media File
+
+```javascript
+const result = mediaHostingApi.uploadMediaFile('/path/to/file.jpg');
+console.log(result);
+```
+
+### View Media Source Link
+
+```javascript
+const result = mediaHostingApi.viewMediaSourceLink('789012');
+console.log(result);
+```
+
+### Accessing Errors
+
+If you encounter any errors while using the API, you can access the specific error message by checking the error property in the response.
+
+---
+
+## Customization and Configuration
+
+The Media Hosting API provides options for customization and configuration. You can set the API endpoint, authentication tokens, and other parameters to tailor the package to your specific requirements.
+
+---
+
+## Handling Rate Limits
+
+Media Hosting API may have rate limits to prevent abuse. It's crucial to handle rate-limiting scenarios gracefully in your application. The npm package includes mechanisms to detect rate limits and manage requests accordingly.
+
+---
+
+## Error Handling
+
+When using the Media Hosting API, you may encounter various errors. It's essential to handle errors gracefully in your application. The package throws errors with descriptive messages to help you troubleshoot issues.
+
+---
+
+## Contributing to the Package
+
+If you find any issues or have suggestions for improvements, feel free to contribute to the Media Hosting API on its [GitHub repository](https://github.com/yourusername/media-hosting-api).
+
+---
+
+## Conclusion
+
+You've now explored the key features and usage of the Media Hosting API. Integrate these functions into your Node.js applications for efficient media file hosting and management. If you have any questions or need further assistance, refer to the API documentation or reach out to the community on the [support forum](https://community.mediahostingapi.com).
+
+Happy coding with Media Hosting API!

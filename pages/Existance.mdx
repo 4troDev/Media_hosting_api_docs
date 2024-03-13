@@ -1,0 +1,27 @@
+# Check Media File Existence
+
+To interact with the Media Hosting API, you can utilize HTTP requests directed at the designated endpoints. These endpoints serve various functionalities essential for managing media files. One of the fundamental operations is checking the existence of a specific media file by providing its unique identifier (ID).
+
+### Check Media File Existence
+
+**Endpoint:** `GET /api/v1/check/:id`
+
+This endpoint allows you to verify whether a media file exists in the hosting service's database by supplying its ID as a parameter.
+
+**Example Implementation (JavaScript):**
+```javascript
+const mediaFileId = '123456'; // Replace '123456' with the actual ID of the media file
+
+// Making a request to the Media Hosting API to check file existence
+mediaHostingApi.checkMediaFileExistence(mediaFileId)
+  .then(result => {
+    console.log(result); // Log the result indicating the existence of the media file
+  })
+  .catch(error => {
+    console.error('Error occurred:', error); // Log any errors that might occur during the request
+  });
+```
+
+In this example, a request is made to the Media Hosting API using the `checkMediaFileExistence` function provided by the API client library. The function takes the ID of the media file as a parameter. Upon successful execution, the result indicating the existence of the media file is logged to the console. Any errors that occur during the request are also captured and logged appropriately.
+
+By leveraging this functionality, developers can efficiently determine the availability of media files within the hosting service, enabling seamless integration and management of multimedia content in their applications.
